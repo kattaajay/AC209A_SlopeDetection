@@ -95,7 +95,7 @@ IMUs (MTi-3 AHRS, Xsens Technologies B.V., Enschede, Netherlands) on the abdomen
 anterior part of each thigh. Each IMU can measure 3-axes linear and angular
 motion using built in accelerometer and gyroscopes. The outputs of the IMU are relevant to the suit because it gives information about the phase of user's gait cycle which determines when assistance should be provided. An image of the particular IMU we are using is shown below.
 
-![IMU pictures](/Images/IMU.jpg)
+![IMUs](/Images/IMU.JPG)
 
 Fig 2. Image of Xsens IMU from Xsens User Manual
 
@@ -103,6 +103,7 @@ Fig 2. Image of Xsens IMU from Xsens User Manual
 During the sloped walking experiments on the treadmill, only certain IMU outputs are selected for streaming. The roll, pitch and yaw angles, angular velocity and linear accelerations were collected. Note the yaw angle is interpreted as heading and measured in teh East-North-Up coordinate system, whereas the roll and pitch angles are measured in the local coordinate frame. The sequence of rotation for Euler angles uses the aerospace convention for rotation from global frame to location frame. Referencing the local coordinate frame in Fig. 1, the IMU sensor is worn such that *x* axis is normal to the sagital plane and points medially, *y* axis is normal to the coronal plane and points anteriorially, and *z* axis is normal to the transverse plane and points vertically down.
 
 ![Planes](/Images/anatomical_planes.png)
+
 Fig 3. Image of Xsens IMU from Xsens User Manual
 
 The suit has an algorithm that segments gait cycles using the maximum hip flexion angle, and the percent gait cycle estimates is another data column. There is also a flag to indicate whether the subject is running determined from the acceleration readings from the abdomen IMU; it is numeric rather than binary because it encodes several different flags together.
