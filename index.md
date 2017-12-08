@@ -8,10 +8,6 @@ nav_include: 1
 Jinwon Chung and Kate Zhou
 Group #55
 
-{:.no_toc}
-*  
-{: toc}
-
 
 ### Motivation:
 
@@ -24,5 +20,8 @@ Currently the hip-only soft exoskeleton suit from Harvard Biodesign Lab uses foo
 How to predict walking slope using Hip-Only exosuit data with no foot IMU?
 1. solve as a classification problem of classifying flat ground, uphill or downhill. 
 2. solve as a regression problem to estimate the exact walking slope and a classification problem with 7 classes at discrete slopes. Compare the performance of the two methods.
+
+![IMUs](/Images/Jon.jpg)
+
 
 
