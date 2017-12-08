@@ -328,17 +328,6 @@ print('Score on train set is %f' %score_dtcv_train)
 
 score_dtcv_test = best_est_dt.score(X_test, y_test)
 print('Score on test set is %f' %score_dtcv_test)
-```
-
-
-    Best parameter is 8.000000
-    Score on train set is 0.985939
-    Score on test set is 0.838272
-
-
-
-
-```python
 
 ind_order_dt_cv = np.argsort(best_est_dt.feature_importances_)[::-1]
 
@@ -348,7 +337,15 @@ for j in range(10):
     print(X_test.columns[ind_order_dt_cv[j]])
 
 print('\nTotal Number of Predictors is %d' %np.sum(best_est_dt.feature_importances_> 0))
+
 ```
+
+
+    Best parameter is 8.000000
+    Score on train set is 0.985939
+    Score on test set is 0.838272
+
+
 
     Significant predictors are: 
 
@@ -447,10 +444,6 @@ plt.ylabel('Principal Component 2')
 
 
 
-    <matplotlib.text.Text at 0x14fc3aa90>
-
-
-
 
 ![png](Report-Model_files/Report-Model_25_1.png)
 
@@ -510,40 +503,8 @@ for n in n_list:
     
 
 best_p, best_score, best_est_rf = custom_cv(est_list, X_train, y_train, n_list, subnum_train)
-best_p, best_score
+
 ```
-
-
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:439: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-      warn("Some inputs do not have OOB scores. "
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:444: RuntimeWarning: invalid value encountered in true_divide
-      predictions[k].sum(axis=1)[:, np.newaxis])
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:439: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-      warn("Some inputs do not have OOB scores. "
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:444: RuntimeWarning: invalid value encountered in true_divide
-      predictions[k].sum(axis=1)[:, np.newaxis])
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:439: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-      warn("Some inputs do not have OOB scores. "
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:444: RuntimeWarning: invalid value encountered in true_divide
-      predictions[k].sum(axis=1)[:, np.newaxis])
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:439: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-      warn("Some inputs do not have OOB scores. "
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:444: RuntimeWarning: invalid value encountered in true_divide
-      predictions[k].sum(axis=1)[:, np.newaxis])
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:439: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-      warn("Some inputs do not have OOB scores. "
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:444: RuntimeWarning: invalid value encountered in true_divide
-      predictions[k].sum(axis=1)[:, np.newaxis])
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:439: UserWarning: Some inputs do not have OOB scores. This probably means too few trees were used to compute any reliable oob estimates.
-      warn("Some inputs do not have OOB scores. "
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/ensemble/forest.py:444: RuntimeWarning: invalid value encountered in true_divide
-      predictions[k].sum(axis=1)[:, np.newaxis])
-
-
-
-
-
-    (32, 1.0)
 
 
 
@@ -582,7 +543,6 @@ plt.title("Best Model: Random Forest")
 
 
 
-    <matplotlib.text.Text at 0x133f5e4e0>
 
 
 
