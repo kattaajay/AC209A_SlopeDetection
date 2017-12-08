@@ -1,13 +1,9 @@
 ---
-title: Overview
+title: Overview:
 notebook: Report-Homepage.ipynb
 nav_include: 1
 ---
 
-## Contents
-{:.no_toc}
-*  
-{: toc}
 
 ## AC209A Data Science Final project
 Jinwon Chung and Kate Zhou
