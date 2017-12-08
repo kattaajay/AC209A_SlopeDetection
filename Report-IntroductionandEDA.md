@@ -83,7 +83,7 @@ sns.set_context("poster")
 
 The sloped walking protocol involved 6 subjects walking at 7 different conditions. The walking slope is collected at discrete slopes of -10%, -5%, 0%, 5%, 10%, 15%, and 20% set by the treadmill. And the suit data was collected at various speeds of 1 m/s, 1.5 m/s, ..., 3.5 m/s, 4 m/s.
 
-![Experiment set-up](/images/experiment.png)
+![Experiment set-up](images/experiment.png)
 
 <img src="experiment.png"  style="width: 500px;">
 <center> Fig 1. Experiment set-up <center>
