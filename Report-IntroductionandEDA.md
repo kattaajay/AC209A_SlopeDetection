@@ -16,69 +16,6 @@ nav_include: 2
 
 
 
-
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-import statsmodels.api as sm
-from statsmodels.api import OLS
-from sklearn import preprocessing
-from sklearn.preprocessing import scale
-from sklearn.decomposition import PCA
-import sklearn.metrics as metrics
-from sklearn.linear_model import Ridge
-from sklearn.linear_model import Lasso
-from sklearn.linear_model import RidgeCV
-from sklearn.linear_model import LassoCV
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.utils import resample
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from sklearn.model_selection import cross_val_score
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import Imputer
-from sklearn.metrics import mean_squared_error
-from datetime import datetime
-from sklearn.model_selection import cross_val_score
-from sklearn import tree
-from sklearn import ensemble
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn import svm
-import itertools;
-from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import KFold
-from itertools import product
-from collections import OrderedDict   
-from sklearn.tree import export_graphviz
-from IPython.display import Image
-from IPython.display import display
-from matplotlib import colors
-import seaborn as sns
-
-%matplotlib inline
-
-sns.set_context("poster")
-```
-
-
-    /Users/kate_zym/anaconda/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
-      from pandas.core import datetools
-
-
-
 ### Experiment Details:
 
 The sloped walking protocol involved 6 subjects walking at 7 different conditions. The walking slope is collected at discrete slopes of -10%, -5%, 0%, 5%, 10%, 15%, and 20% set by the treadmill. And the suit data was collected at various speeds of 1 m/s, 1.5 m/s, ..., 3.5 m/s, 4 m/s.
