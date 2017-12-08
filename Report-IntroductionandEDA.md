@@ -11,8 +11,9 @@ nav_include: 2
 
 
 
+## 1. Introduction and Description of Data
 
-### Experiment Details:
+### 1) Experiment Details
 
 The sloped walking protocol involved 6 subjects walking at 7 different conditions. The walking slope is collected at discrete slopes of -10%, -5%, 0%, 5%, 10%, 15%, and 20% set by the treadmill. And the suit data was collected at various speeds of 1 m/s, 1.5 m/s, ..., 3.5 m/s, 4 m/s.
 
@@ -21,7 +22,7 @@ The sloped walking protocol involved 6 subjects walking at 7 different condition
 
 Fig 1. Experiment set-up 
 
-### Description of Data:
+### 2) Description of Raw Data
 
 The Hip-Only soft exoskeleton has 3
 IMUs (MTi-3 AHRS, Xsens Technologies B.V., Enschede, Netherlands) on the abdomen and the
@@ -59,7 +60,7 @@ For the outcome variable, the walking slope is collected at discrete slopes of -
 *Note: we used MATLAB to perform data cleaning and to exact and assemble all predictors
 mentioned above. We have a total of 1820 predictors and 5006 observations.
 
-### Additional Feature Engineering
+### 3) Additional Feature Engineering
 
 After some initial data exploration,  we noticed that the kinematic data seem shifted per subject or testing condition. This is likely due to the inconsistent placement of the wearable sensors during each donning. To compensate for these shifts in data range, we decided to add more predictors of each IMU signal subtracting the mean of that signal during each stride.
 
@@ -67,7 +68,7 @@ We used the orignal column names and added "_mm" (which stand for *minus mean*) 
 
 With these engineered features, we have 3251 predictors in total.
 
-### Further Data Manipulation - Removing predictors
+### 4) Further Data Manipulation - Removing predictors
 
 In this third stage of manipuating our data, we decided to remove predictors that are difficult to collect or unreliable during real time data collection of the suit. In order to better minic a real-time slope estimation algorithm, the *angle Z* (or yaw angle), *acceleration x*, and *accleration y* are removed.
 
@@ -77,14 +78,15 @@ Finally, *percentage gait cycle* and *running flag* predictors were removed beca
 
 After removing these unncessary predictors, we have a total of 1928 predictors.
 
-### Standardization
+### 5) Standardization
 
 Because most of our data physical kinematic values, no standardization was required as a natural boundary of reasonable values have been set by body geometry. However, for the need of unbiased regularization and PCA, we standardized the data when using those methods
 
 -------------------
 
+## 2. EDA
 
-### EDA for 3-Class Classification (flatground, uphill, downhill)
+### 1) EDA for 3-Class Classification (flatground, uphill, downhill)
 
 Methods for Initial Data Exploration:
 First for our classification problem, we split the data into three sets - flat ground, uphill, and downhill, denoted by class 0, class 1 and class -1 respectively. We plotted the IMU data of each gait cycle (50 features per gait cycle), and compared the three groups against each other.
@@ -181,8 +183,8 @@ plt.ylabel("Angle [deg]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_22_1.png)
 
 
-#### Comments:
-* Plotting the thigh extension angle during one gait cycle shows promising differences between the three classes. Around 40% gait cycle, X-axis angle seems separate downhill, flat, and uphill condition quite well.
+** Comments **
+- Plotting the thigh extension angle during one gait cycle shows promising differences between the three classes. Around 40% gait cycle, X-axis angle seems separate downhill, flat, and uphill condition quite well.
 
 
 
@@ -205,9 +207,9 @@ plt.xlabel('Reference Speed [m/s]')
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_24_1.png)
 
 
-#### Comments:
-* Plotting the Thigh angle at 40% gait cycle versus the reference speed shows each slope class is clustered at different regions
-* Although having reference speed as a predictor will greatly help the classification performance, the reference speed cannot be used as overground walking contains time-varying speeds that cannot be estimated accurately
+** Comments **
+1. Plotting the Thigh angle at 40% gait cycle versus the reference speed shows each slope class is clustered at different regions
+2. Although having reference speed as a predictor will greatly help the classification performance, the reference speed cannot be used as overground walking contains time-varying speeds that cannot be estimated accurately
 
 
 
@@ -238,9 +240,9 @@ plt.ylabel("Angle [deg]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_26_1.png)
 
 
-#### Comments:
-* When the thigh angle is centered around 0 degree, the main differences in the three classes can be shown at either near 0% or 100% gait cycle as well as around 40%
-* The uphill signals seem most different than flat and downhill 
+** Comments**
+1. When the thigh angle is centered around 0 degree, the main differences in the three classes can be shown at either near 0% or 100% gait cycle as well as around 40%
+2. The uphill signals seem most different than flat and downhill 
 
 
 
@@ -270,9 +272,9 @@ plt.ylabel("Angular Velocity [deg/s]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_28_1.png)
 
 
-#### Comments:
-* Looking at the angular velocity of thigh extension, we see that the uphill features seem the most different from two other classes
-* flat ground and downhill signals overlaps greatly, may be difficult to use this feature to classify
+** Comments **
+1. Looking at the angular velocity of thigh extension, we see that the uphill features seem the most different from two other classes
+2. flat ground and downhill signals overlaps greatly, may be difficult to use this feature to classify
 
 
 
@@ -301,9 +303,9 @@ plt.ylabel("Angular Velocity [deg/s]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_30_1.png)
 
 
-#### Comments:
-* Now that the angular velocity signal is centered around 0 deg/s, the variance and distribution of different classes do not seem so different
-* Angular velocity may not be sensitive to different sensor placements (donning sensor descrepancies) 
+** Comments **
+1. Now that the angular velocity signal is centered around 0 deg/s, the variance and distribution of different classes do not seem so different
+2. Angular velocity may not be sensitive to different sensor placements (donning sensor descrepancies) 
 
 
 
@@ -335,12 +337,15 @@ plt.ylabel("Angular Velocity [deg/s]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_32_1.png)
 
 
-#### Comments:
-* The gyro in the z direction caputres some interesting signals during a gait cycle
-* Uphill data has more extreme values
-* Flat ground and downhill data have the most differences at around 10% and 55% gait cycle
+** Comments **
+1. The gyro in the z direction caputres some interesting signals during a gait cycle
+2. Uphill data has more extreme values
+3. Flat ground and downhill data have the most differences at around 10% and 55% gait cycle
 
-### EDA for 7-Class Classification/Regression
+
+
+
+### 2) EDA for 7-Class Classification/Regression
 
 Secondly, we performed some data exploration for the regression problem. Even though the data is collected   at   discrete   slopes,   the   relationship   between   certain   predictors   and   walking   slope   can still   be   shown.
 
@@ -432,9 +437,9 @@ plt.ylabel("Angle [deg]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_39_1.png)
 
 
-#### Comments:
-* The thigh extension (roll) angles do seem to vary according to the different slope classes
-* The most noticeable difference seem to be near the peak, around 38% GC
+** Comments **
+1. The thigh extension (roll) angles do seem to vary according to the different slope classes
+2. The most noticeable difference seem to be near the peak, around 38% GC
 
 
 
@@ -454,9 +459,9 @@ plt.legend()
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_41_1.png)
 
 
-#### Comments:
-* Plotting the sum of thigh angles at 38% percent GC, we see that there is a trend of roll angle distribution at the different reference slopes
-* with higher thigh angle values at 38% GC, there is a higher probability of walking uphill
+** Comments **
+1. Plotting the sum of thigh angles at 38% percent GC, we see that there is a trend of roll angle distribution at the different reference slopes
+2. with higher thigh angle values at 38% GC, there is a higher probability of walking uphill
 
 
 
@@ -476,7 +481,7 @@ plt.title('Slope vs. Roll Angle Amplitude')
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_43_1.png)
 
 
-#### Comments:
-* Similarly, we can look at the distribution of thigh angle amplitude
-* The distribution and mean of thigh angle amplitude changes at different reference slopes
-* As the thigh roll angle increases, the most probable reference slope also increases
+** Comments **
+1. Similarly, we can look at the distribution of thigh angle amplitude
+2. The distribution and mean of thigh angle amplitude changes at different reference slopes
+3. As the thigh roll angle increases, the most probable reference slope also increases
