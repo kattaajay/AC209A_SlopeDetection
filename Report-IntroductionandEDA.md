@@ -83,13 +83,10 @@ sns.set_context("poster")
 
 The sloped walking protocol involved 6 subjects walking at 7 different conditions. The walking slope is collected at discrete slopes of -10%, -5%, 0%, 5%, 10%, 15%, and 20% set by the treadmill. And the suit data was collected at various speeds of 1 m/s, 1.5 m/s, ..., 3.5 m/s, 4 m/s.
 
-kk
 
 ![Experiment set-up](/Images/experiment.png)
 Format: ![Alt Text](url)
 
-
-<img src="experiment.png"  style="width: 500px;">
 <center> Fig 1. Experiment set-up <center>
 
 ### Description of Data:
@@ -99,13 +96,14 @@ IMUs (MTi-3 AHRS, Xsens Technologies B.V., Enschede, Netherlands) on the abdomen
 anterior part of each thigh. Each IMU can measure 3-axes linear and angular
 motion using built in accelerometer and gyroscopes. The outputs of the IMU are relevant to the suit because it gives information about the phase of user's gait cycle which determines when assistance should be provided. An image of the particular IMU we are using is shown below.
 
-<img src="IMU.jpg"  style="width: 800px;">
+![IMU pictures](/Images/IMU.jpg)
+
 <center> Fig 2. Image of Xsens IMU from Xsens User Manual <center>
 
 
 During the sloped walking experiments on the treadmill, only certain IMU outputs are selected for streaming. The roll, pitch and yaw angles, angular velocity and linear accelerations were collected. Note the yaw angle is interpreted as heading and measured in teh East-North-Up coordinate system, whereas the roll and pitch angles are measured in the local coordinate frame. The sequence of rotation for Euler angles uses the aerospace convention for rotation from global frame to location frame. Referencing the local coordinate frame in Fig. 1, the IMU sensor is worn such that *x* axis is normal to the sagital plane and points medially, *y* axis is normal to the coronal plane and points anteriorially, and *z* axis is normal to the transverse plane and points vertically down.
 
-<img src="anatomical_planes.png"  style="width: 500px;">
+![Planes](/Images/anatomical_planes.png)
 <center> Fig 3. Image of Xsens IMU from Xsens User Manual <center>
 
 !!!!!!!!!!!!!! *ADD MORE LATER IF THERES TIME*
