@@ -1,16 +1,3 @@
----
-title: compare roll angle amplitude
-notebook: Report-IntroductionandEDA.ipynb
-nav_include: 2
----
-
-## Contents
-{:.no_toc}
-*  
-{: toc}
-
-
-
 ```python
 import numpy as np
 import pandas as pd
@@ -71,6 +58,7 @@ sns.set_context("poster")
       from pandas.core import datetools
 
 
+# Description of Data
 
 ### Experiment Details:
 
@@ -144,6 +132,7 @@ Because most of our data physical kinematic values, no standardization was requi
 
 -------------------
 
+# Exploratory Data Analysis:
 
 ### EDA for 3-Class Classification (flatground, uphill, downhill)
 
@@ -196,6 +185,7 @@ def standardize(x, x_ref):
 
 
 ```python
+# 2. Divide Data into 3 classes
 df_downhill = df[df['ref_slope'] < 0]
 df_flat = df[df['ref_slope'] == 0]
 df_uphill = df[df['ref_slope'] > 0]
@@ -465,6 +455,7 @@ set(df['ref_slope'])
 
 
 ```python
+# split into 7 dataframes
 
 df_n10 = df[df['ref_slope'] == -10]
 df_n5 = df[df['ref_slope'] == -5]
@@ -497,6 +488,7 @@ df_20 = df_20[msk7]
 
 
 ```python
+# Use a color package for showing a gradient result
 ! pip install colour
 
 from colour import Color
@@ -511,6 +503,7 @@ colors = list(red.range_to(Color("green"),7))
 
 
 ```python
+# plot roll angle
 
 a = 52
 
@@ -589,6 +582,7 @@ plt.legend()
 
 
 ```python
+# compare roll angle amplitude
 plt.scatter(df['angleX_R_max_mm'].values, df['ref_slope'], alpha= 0.1)
 
 plt.xlabel('Maximum Roll Angle  minus Mean [deg]')
