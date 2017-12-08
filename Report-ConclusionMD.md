@@ -47,7 +47,7 @@ From the confusion matrix of our best random forest model, we see that downhill 
 
 ![Table1](/Images/con_cm1.png)
 
-#### Individually Trained Classification
+### - Individually Trained Classification
 
 For the subject-specific classification, we applied the best model from the universal model described above. Building random forest models for each of the 6 subjects, we see that the classification accuracy is near perfect.
 
@@ -74,7 +74,7 @@ From the confusion matrix of the best random forest model, there is a more likel
 **Fig 5. Baseline vs. Best Model**
 ![Table1](/Images/con_cm2.png)
 
-#### Individually Trained Classification
+### - Individually Trained Classification
 
 We used the best model, random forest, for training individual classification models.
 From the results, we see that the average train score can reach 1.0, and the average test scorey is also very high, 0.992. The prediction accuracy is greatly improved by using subject-specific models.
@@ -103,7 +103,7 @@ We compared the performance of the baseline model and the best regression model,
 **Fig 7. Baseline vs. Best Model (Regression)**
 ![Table1](/Images/con_graph5.png)
 
-#### Individually Trained Model
+### - Individually Trained Model
 
 Applying the best regression model found above to the individually trained modeling approach, we found even higher prediction accuracies. Note although the converted test accuracy (from rounding predictions) is quite high (0.93), it is lower than that of the 7-class classification random forest model. This is a very interesting finding as the regression model out performed the 7-class classifier when only one universal model is used.
 
