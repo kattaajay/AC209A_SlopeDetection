@@ -1,12 +1,14 @@
 ---
 title: Overview:
 notebook: Report-Homepage.ipynb
+nav_include: 1
 ---
 
 ## Contents
 {:.no_toc}
 *  
 {: toc}
+
 
 
 Predicting and classifying human motion using wearable sensors have a wide variety of applications. These applications span from development of entertainment technology to assistive devices. One particularly interesting use case is in combining an gait classification model with soft exoskeletons in order to determine the best types of assistance at different walking or running conditions. In particular, the necessary assistance to the hip joint is highly dependent on the walking slope. In this project, we aim to develop a walking slope classifer.
