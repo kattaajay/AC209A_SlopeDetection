@@ -1,5 +1,5 @@
 ---
-title: Model
+title: Models
 notebook: Report-Model.ipynb
 include_nav: 4
 ---

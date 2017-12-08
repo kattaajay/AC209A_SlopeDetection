@@ -1,7 +1,6 @@
 ---
-title: Overview:
+title: At-a-glance:
 notebook: Report-Homepage.ipynb
-nav_include: 1
 ---
 
 ## Contents
@@ -29,4 +28,9 @@ How to predict walking slope using Hip-Only exosuit data with no foot IMU?
 
 ### Conclusion and Future Work
 
+
+
+```python
+
+```
 
