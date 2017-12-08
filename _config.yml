@@ -1,6 +1,6 @@
 theme: jekyll-theme-primer
-title: Support Vector Olives
-description: Keeping Italian Olives Pure!
+title: Exosuit Slope Detection
+description: Detecting walking and running slopes using IMUS
 baseurl:
 markdown: kramdown
 kramdown:
