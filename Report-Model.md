@@ -10,6 +10,7 @@ nav_include: 4
 {: toc}
 
 **Model Descriptions**
+
 We used various models to for each problem formuation (3-class universal classification, 3-class subject-specific classification, 7-class universal classification, 7-class subject-specific classification, general regression, subject-specific regression). The train set consists of data from subjects 1 to 5, and the test set consists of data from subject 6. We also used two cross validation methods, normal cross validation and leave-one-subject-out cross validations. 
 
 More information related to model training and performance can be found on the Conlusions and Results page.
