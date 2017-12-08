@@ -106,22 +106,6 @@ df["slope_class"][df['ref_slope'] > 0]= 1
 ```
 
 
-    /Users/kate_zym/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:5: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      """
-    /Users/kate_zym/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:6: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      
-    /Users/kate_zym/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:7: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      import sys
-
 
 
 
@@ -157,14 +141,9 @@ flat_stand = standardize(df_flat, df_flat)
 uphill_stand = standardize(df_uphill, df_uphill)
 
 
-df.shape, df_downhill.shape, df_flat.shape, df_uphill.shape, downhill_stand.shape
 ```
 
 
-
-
-
-    ((5006, 3252), (1009, 3252), (859, 3252), (992, 3252), (1009, 3252))
 
 
 
@@ -198,7 +177,7 @@ plt.ylabel("Angle [deg]")
 
 
 
-    <matplotlib.text.Text at 0x1432a24a8>
+
 
 
 
