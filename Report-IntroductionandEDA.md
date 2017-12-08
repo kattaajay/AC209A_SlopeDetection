@@ -204,9 +204,6 @@ plt.xlabel('Reference Speed [m/s]')
 
 
 
-    <matplotlib.text.Text at 0x146fed400>
-
-
 
 
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_24_1.png)
@@ -238,11 +235,6 @@ plt.xlabel("Percentage of Gait Cycle [%]")
 plt.ylabel("Angle [deg]")
 ```
 
-
-
-
-
-    <matplotlib.text.Text at 0x1429e6ac8>
 
 
 
@@ -279,11 +271,6 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-    <matplotlib.text.Text at 0x1421de2b0>
-
-
-
-
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_28_1.png)
 
 
@@ -311,12 +298,6 @@ plt.title("Thigh Angular Velocity  - Mean ("+ str(df.columns[a]) + ")")
 plt.xlabel("Percentage of Gait Cycle [%]")
 plt.ylabel("Angular Velocity [deg/s]")
 ```
-
-
-
-
-
-    <matplotlib.text.Text at 0x1442da7b8>
 
 
 
@@ -353,9 +334,6 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-    <matplotlib.text.Text at 0x152f62828>
-
-
 
 
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_32_1.png)
@@ -369,19 +347,6 @@ plt.ylabel("Angular Velocity [deg/s]")
 ### EDA for 7-Class Classification/Regression
 
 Secondly, we performed some data exploration for the regression problem. Even though the data is collected   at   discrete   slopes,   the   relationship   between   certain   predictors   and   walking   slope   can still   be   shown.
-
-
-
-```python
-set(df['ref_slope'])
-```
-
-
-
-
-
-    {-10, -5, 0, 5, 10, 15, 20}
-
 
 
 
@@ -427,10 +392,6 @@ colors = list(red.range_to(Color("green"),7))
 ```
 
 
-    Requirement already satisfied: colour in /Users/kate_zym/anaconda/lib/python3.6/site-packages
-
-
-
 
 ```python
 
@@ -469,8 +430,6 @@ plt.ylabel("Angle [deg]")
 
 
 
-    <matplotlib.text.Text at 0x123904780>
-
 
 
 
@@ -496,11 +455,6 @@ plt.legend()
 
 
 
-    <matplotlib.legend.Legend at 0x122f0d160>
-
-
-
-
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_41_1.png)
 
 
@@ -519,10 +473,6 @@ plt.title('Slope vs. Roll Angle Amplitude')
 ```
 
 
-
-
-
-    <matplotlib.text.Text at 0x1533ed470>
 
 
 
