@@ -21,7 +21,7 @@ In summary, for the exosuit slope estimation problem using only torso and thigh 
 
 ## 2. Results
 
-### 3-Class Classification
+### 1) 3-Class Classification
 
 We tried various modeling methods for the 3-class slope gradient estimation problem. We chose to use a decision tree with unlimited depth as a baseline model. The train score for the baseline model is 1.0, while the test score is 0.817. This is expected as an unlimted depth tree will overfit to the training data.
 
@@ -46,7 +46,7 @@ From the confusion matrix of our best random forest model, we see that downhill 
 **Fig 2. Confusion Matrix for Random Forest Model**
 ![Table1](/Images/con_cm1.png)
 
-### Individually Trained Classification
+#### Individually Trained Classification
 
 For the subject-specific classification, we applied the best model from the universal model described above. Building random forest models for each of the 6 subjects, we see that the classification accuracy is near perfect.
 
@@ -56,7 +56,7 @@ For the subject-specific classification, we applied the best model from the univ
 **Fig 3. Subject-specific Random Forest Model**
 ![Table1](/Images/con_graph2.png)
 
-### 7-Class Classification
+### 2) 7-Class Classification
 
 For the 7-class classification problem, we used a variety of methods. The baseline model of decision tree with unlimited depth showed overfitting on the traning data, and performed poorly on the test set. From there, we modified the baseline model using the two types of cross validation methodds mentioned above. The best model was random forest with maximum depth of 43 and 16 trees. A summary of prediction accuracies of various models is shown belown.
 
@@ -73,7 +73,7 @@ From the confusion matrix of the best random forest model, there is a more likel
 **Fig 5. Baseline vs. Best Model**
 ![Table1](/Images/con_cm2.png)
 
-### Individually Trained Classification
+#### Individually Trained Classification
 
 We used the best model, random forest, for training individual classification models.
 From the results, we see that the average train score can reach 1.0, and the average test scorey is also very high, 0.992. The prediction accuracy is greatly improved by using subject-specific models.
@@ -86,7 +86,7 @@ The prediction accuracies of this individual model is shown to be almost perfect
 **Fig 6. Subject-specific Random Forest Model**
 ![Table1](/Images/con_graph4.png)
 
-### Linear Regression
+### 3) Linear Regression
 
 For the last part of this slope prediction problem, we used various regression models to test the prediction performance. The baseline model used is a simple linear regression model with all predictors, and the accuracy is around 0.73. The converted test accuracy is measured from rounding the predicted slope to the nearest discrete slope we collected data at (-15, -10, .. 0, .. 20). 
 
@@ -102,7 +102,7 @@ We compared the performance of the baseline model and the best regression model,
 **Fig 7. Baseline vs. Best Model (Regression)**
 ![Table1](/Images/con_graph5.png)
 
-### Individually Trained Model
+#### Individually Trained Model
 
 Applying the best regression model found above to the individually trained modeling approach, we found even higher prediction accuracies. Note although the converted test accuracy (from rounding predictions) is quite high (0.93), it is lower than that of the 7-class classification random forest model. This is a very interesting finding as the regression model out performed the 7-class classifier when only one universal model is used.
 
