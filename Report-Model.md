@@ -9,15 +9,10 @@ nav_include: 4
 *  
 {: toc}
 
-**Summary**
-- We built models to predict walking slope using Hip-Only exosuit data without foot IMU. The first part is classification into 3 classes (, 7, regression
-- Build various model to find the best models for each case
-- powerful, simple, fast to predict
-- Test classification accuracy and R squared
-- Leave one subject out CV
-- To compare 7 classification and regression: calculated r squared value for 7 classification, and converted classification accuracy for regression
-- For implementing in the real system as a control parameter, classification accuracy should be very high (over 95%): Individually trained model might show high prediction performance, so we build one individually trained model for each case.
-- Detailed explanation of important findings are in result section
+**Model Descriptions**
+We used various models to for each problem formuation (3-class universal classification, 3-class subject-specific classification, 7-class universal classification, 7-class subject-specific classification, general regression, subject-specific regression). The train set consists of data from subjects 1 to 5, and the test set consists of data from subject 6. We also used two cross validation methods, normal cross validation and leave-one-subject-out cross validations. 
+
+More information related to model training and performance can be found on the Conlusions and Results page.
 
 
 
