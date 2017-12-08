@@ -85,9 +85,8 @@ The sloped walking protocol involved 6 subjects walking at 7 different condition
 
 
 ![Experiment set-up](/Images/experiment.png)
-Format: ![Alt Text](url)
 
-<center> Fig 1. Experiment set-up <center>
+Fig 1. Experiment set-up 
 
 ### Description of Data:
 
@@ -98,16 +97,13 @@ motion using built in accelerometer and gyroscopes. The outputs of the IMU are r
 
 ![IMU pictures](/Images/IMU.jpg)
 
-<center> Fig 2. Image of Xsens IMU from Xsens User Manual <center>
+Fig 2. Image of Xsens IMU from Xsens User Manual
 
 
 During the sloped walking experiments on the treadmill, only certain IMU outputs are selected for streaming. The roll, pitch and yaw angles, angular velocity and linear accelerations were collected. Note the yaw angle is interpreted as heading and measured in teh East-North-Up coordinate system, whereas the roll and pitch angles are measured in the local coordinate frame. The sequence of rotation for Euler angles uses the aerospace convention for rotation from global frame to location frame. Referencing the local coordinate frame in Fig. 1, the IMU sensor is worn such that *x* axis is normal to the sagital plane and points medially, *y* axis is normal to the coronal plane and points anteriorially, and *z* axis is normal to the transverse plane and points vertically down.
 
 ![Planes](/Images/anatomical_planes.png)
-<center> Fig 3. Image of Xsens IMU from Xsens User Manual <center>
-
-!!!!!!!!!!!!!! *ADD MORE LATER IF THERES TIME*
-
+Fig 3. Image of Xsens IMU from Xsens User Manual
 
 The suit has an algorithm that segments gait cycles using the maximum hip flexion angle, and the percent gait cycle estimates is another data column. There is also a flag to indicate whether the subject is running determined from the acceleration readings from the abdomen IMU; it is numeric rather than binary because it encodes several different flags together.
 
