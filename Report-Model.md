@@ -804,6 +804,7 @@ plt.show()
 ![png](Report-Model_files/Report-Model_52_0.png)
 
 
+
 ## 2. Classification into 7 classes (-10, -5, 0, 5, 10, 15, 20)
 
 ### 1) Baseline Model: Decision Tree (Default: Unlimited Depth)
@@ -819,7 +820,7 @@ print('Score on test set is %f' %base_dt_m.score(X_test, y_test_multi))
 
 print('* R2 Score (regression metric) %f' %r2_score(y_test_multi, base_dt_m.predict(X_test)))
 
-
+print("Number of predictors: %d" %np.sum(base_dt_m.feature_importances_> 0))
 ```
 
 
@@ -827,16 +828,7 @@ print('* R2 Score (regression metric) %f' %r2_score(y_test_multi, base_dt_m.pred
     Score on test set is 0.472840
     * R2 Score (regression metric) 0.722818
 
-
-
-
-```python
-print("Number of predictors: %d" %np.sum(base_dt_m.feature_importances_> 0))
-```
-
-
     Number of predictors: 258
-
 
 
 
@@ -864,11 +856,6 @@ plt.title("Baseline Model")
 
 
 
-    <matplotlib.text.Text at 0x154668828>
-
-
-
-
 ![png](Report-Model_files/Report-Model_58_1.png)
 
 
@@ -886,20 +873,13 @@ for p in paramlist:
     
 
 best_p, best_score, best_est_dt_m = custom_cv(est_list, X_train, y_train_multi, paramlist, subnum_train)
-```
 
-
-
-
-```python
 print('Best parameter is %f' %best_p)
-
 print('Score on train set is %f' %best_est_dt_m.score(X_train, y_train_multi))
-
 print('Score on test set is %f' %best_est_dt_m.score(X_test, y_test_multi))
-
-
 print('* R2 Score (regression metric) %f' %r2_score(y_test_multi, best_est_dt_m.predict(X_test)))
+
+print('Total Number of Predictors is %d' %np.sum(best_est_dt_m.feature_importances_ > 0))
 ```
 
 
@@ -908,16 +888,9 @@ print('* R2 Score (regression metric) %f' %r2_score(y_test_multi, best_est_dt_m.
     Score on test set is 0.495062
     * R2 Score (regression metric) 0.751662
 
-
-
-
-```python
-
-print('Total Number of Predictors is %d' %np.sum(best_est_dt_m.feature_importances_ > 0))
-```
-
-
     Total Number of Predictors is 129
+
+
 
 
 ### 3) Decision Tree (Normal CV)
@@ -941,14 +914,22 @@ score_dt_cv_train_m = dt_cv_m.score(X_train, y_train_multi)
 print('Score on train set for Decision Tree classifier is %f' %score_dt_cv_train_m)
 score_dt_cv_test_m = dt_cv_m.score(X_test, y_test_multi)
 print('Score on test set for Decision Tree classifier is %f' %score_dt_cv_test_m)
+
+r2_score_dt_cv_m = r2_score(y_test_multi, dt_cv_m.predict(X_test))
+print('* R2 Score (regression metric) %f' %r2_score_dt_cv_m)
+
+print('Total Number of Predictors is %d' %np.sum(dt_cv_m.feature_importances_ > 0))
+
 ```
 
 
     {'max_depth': 10} best score is 0.395615
+
     Score on train set for Decision Tree classifier is 0.968065
     Score on test set for Decision Tree classifier is 0.487654
+    * R2 Score (regression metric) 0.748145
 
-
+    Total Number of Predictors is 199
 
 
 ```python
@@ -961,19 +942,6 @@ print("--- %s seconds ---" % (time.time() - start_time))
 
     --- 0.002917051315307617 seconds ---
 
-
-
-
-```python
-r2_score_dt_cv_m = r2_score(y_test_multi, dt_cv_m.predict(X_test))
-print('* R2 Score (regression metric) %f' %r2_score_dt_cv_m)
-
-print('Total Number of Predictors is %d' %np.sum(dt_cv_m.feature_importances_ > 0))
-```
-
-
-    * R2 Score (regression metric) 0.748145
-    Total Number of Predictors is 199
 
 
 ### 4) Decision Tree (PCA Components: 90% explained variance)
@@ -998,15 +966,8 @@ X_train_pca = pca.transform(X_train_std)
 X_test_pca = pca.transform(X_test_std)
 
 print("number of predictors: %d" %ncomp)
-```
 
 
-    number of predictors: 61
-
-
-
-
-```python
 paramlist = np.array([6, 8, 10, 12]);
 est_list = [];
 
@@ -1016,12 +977,8 @@ for p in paramlist:
     
 
 best_p, best_score, best_est_dt_pca_m = custom_cv(est_list, X_train_pca, y_train_multi, paramlist, subnum_train)
-```
 
 
-
-
-```python
 print('Best parameter is %f' %best_p)
 
 print('Score on train set is %f' %best_est_dt_pca_m.score(X_train_pca, y_train_multi))
@@ -1030,8 +987,11 @@ print('Score on test set is %f' %best_est_dt_pca_m.score(X_test_pca, y_test_mult
 
 r2_score_dt_pca_m = r2_score(y_test_multi, best_est_dt_pca_m.predict(X_test_pca))
 print('* R2 Score (regression metric) %f' %r2_score_dt_pca_m)
+
 ```
 
+
+    number of predictors: 61
 
     Best parameter is 12.000000
     Score on train set is 0.969018
@@ -1052,19 +1012,8 @@ for n in n_list:
     
 
 best_p, best_score, best_est_rf_m = custom_cv(est_list, X_train, y_train_multi, n_list, subnum_train)
-best_p, best_score
-```
 
 
-
-
-    (16, 1.0)
-
-
-
-
-
-```python
 print('Best parameter is: %d' %best_p)
 
 print('Score on train set is %f' %best_est_rf_m.score(X_train, y_train_multi))
@@ -1073,6 +1022,7 @@ print('Score on test set is %f' %best_est_rf_m.score(X_test, y_test_multi))
 
 print('* R2 Score (regression metric) %f' %r2_score(y_test_multi, best_est_rf_m.predict(X_test)))
 ```
+
 
 
     Best parameter is: 16
@@ -1122,19 +1072,7 @@ plt.figure()
 plot_confusion_matrix(cnf_matrix_mt, classes=class_names,
                       title='Confusion matrix: Best Model')
 
-plt.show()
 ```
-
-
-    Confusion matrix
-    [[42 48  1  0  0  0  0]
-     [13 68 11  0  0  0  0]
-     [ 1 25 94 13  0  0  0]
-     [ 0  1 64 56 10  0  0]
-     [ 0  0 11 44 79  0  0]
-     [ 0  0  1 17 82 32  0]
-     [ 0  0  0  2 35 41 19]]
-
 
 
 ![png](Report-Model_files/Report-Model_76_1.png)
@@ -1158,12 +1096,7 @@ for td in tree_depths:
             est_list.append(adaboost)
 
 best_p, best_score, best_est_treeboost_m = custom_cv(est_list, X_train, y_train_multi, paramlist, subnum_train)
-```
 
-
-
-
-```python
 print('Best parameter is:', best_p)
 
 print('Score on train set is %f' %best_est_treeboost_m.score(X_train, y_train_multi))
@@ -1205,20 +1138,6 @@ for c in Cs:
     est_list.append(clf)
 
 best_p, best_score, best_est_log_m = custom_cv(est_list, X_train_std, y_train_multi, Cs, subnum_train)
-best_p
-```
-
-
-
-
-
-    10.0
-
-
-
-
-
-```python
 
 print('Score on train set for Decision Tree classifier is %.3f' %best_est_log_m.score(X_train_std, y_train_multi))
 
@@ -1250,7 +1169,7 @@ print("--- %s seconds ---" % (time.time() - start_time))
 
 
 
-### Random Forest
+### 8) Individually trained model: Random Forest
 
 
 
@@ -1280,25 +1199,11 @@ for i in range(len(X_train_list_n)):
     score_rf_cv_train_list_n[i] = rf_cv_ind_n.score(X_train_list_n[i], y_train_multi_list_n[i])
     score_rf_cv_test_list_n[i] = rf_cv_ind_n.score(X_test_list_n[i], y_test_multi_list_n[i])
 
-```
-
-
-```python
 print('Average score on train set is %.3f'  %np.average(score_rf_cv_train_list_n))
 print('Average score on test set is %.3f' %np.average(score_rf_cv_test_list_n))
 
 print("number of predictor:", X_train_list_n[0].shape[1])
-```
 
-
-    Average score on train set is 1.000
-    Average score on test set is 0.992
-    number of predictor: 1928
-
-
-
-
-```python
 r2_score_rf_ind_list_n = [None]*5
 for i in np.arange(len(X_train_list_n)):
     r2_score_rf_ind_list_n[i] = r2_score(y_test_multi_list_n[i], rf_cv_ind_list_n[i].predict(X_test_list_n[i]))
@@ -1306,6 +1211,10 @@ for i in np.arange(len(X_train_list_n)):
 print('* R2 Score (regression metric) %f' %np.average(r2_score_rf_ind_list_n))
 ```
 
+
+    Average score on train set is 1.000
+    Average score on test set is 0.992
+    number of predictor: 1928
 
     * R2 Score (regression metric) 0.997017
 
@@ -1345,7 +1254,6 @@ axes[0].set_ylabel("Slope (%)")
 axes[3].set_ylabel("Slope (%)")
 
 
-plt.show()
 ```
 
 
