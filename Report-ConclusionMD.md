@@ -52,7 +52,7 @@ From the confusion matrix of our best random forest model, we see that downhill 
 For the subject-specific classification, we applied the best model from the universal model described above. Building random forest models for each of the 6 subjects, we see that the classification accuracy is near perfect.
 
 **Table 2. Summary of All Methods and Findings for Individually Trained 3-class Problem**
-![Table1](/Images/Summary_Table_2.png)
+![Table1](/Images/Summary_table_2.png)
 
 **Fig 3. Subject-specific Random Forest Model**
 ![Table1](/Images/con_graph2.png)
@@ -62,7 +62,7 @@ For the subject-specific classification, we applied the best model from the univ
 For the 7-class classification problem, we used a variety of methods. The baseline model of decision tree with unlimited depth showed overfitting on the traning data, and performed poorly on the test set. From there, we modified the baseline model using the two types of cross validation methodds mentioned above. The best model was random forest with maximum depth of 43 and 16 trees. A summary of prediction accuracies of various models is shown belown.
 
 **Table 3. Summary of All Methods and Findings for 7-class Classification**
-![Table1](/Images/Summary_Table_3.png)
+![Table1](/Images/Summary_table_3.png)
 
 Visually comparing the prediction accuracy of our baseline tree model to our best random forest model, we see great improvements have been made. It seems like there are fewer misclassification cases of classifying the slope as lower than the true value.
 
@@ -80,7 +80,7 @@ We used the best model, random forest, for training individual classification mo
 From the results, we see that the average train score can reach 1.0, and the average test scorey is also very high, 0.992. The prediction accuracy is greatly improved by using subject-specific models.
 
 **Table 4. Summary of Findings for Individually Trained 7-class Classification**
-![Table1](/Images/Summary_Table_4.png)
+![Table1](/Images/Summary_table_4.png)
 
 The prediction accuracies of this individual model is shown to be almost perfect. The results are graphed below.
 
@@ -96,7 +96,7 @@ From the baseline model,  we applied Lasso and Ridge regularization methods and 
 The best performing model we was is linear ression with PCA components. We chose to use 61 componenets as it explained 90% of the variance in predictors. This model is also computationally light as it uses fewer predictors, but it is more difficult to interpret and relate to human biomechnics due the nature of PCA components.  
 
 **Table 5. Summary of Findings for Regression Models**
-![Table1](/Images/Summary_Table_5.png)
+![Table1](/Images/Summary_table_5.png)
 
 We compared the performance of the baseline model and the best regression model, and great improvements are shown. In addition, the best performing regression model as avoided making outlier predictions.
 
@@ -108,7 +108,7 @@ We compared the performance of the baseline model and the best regression model,
 Applying the best regression model found above to the individually trained modeling approach, we found even higher prediction accuracies. Note although the converted test accuracy (from rounding predictions) is quite high (0.93), it is lower than that of the 7-class classification random forest model. This is a very interesting finding as the regression model out performed the 7-class classifier when only one universal model is used.
 
 **Table 6. Summary of Findings for Individually Trained Regression Model**
-![Table1](/Images/Summary_Table_6.png)
+![Table1](/Images/Summary_table_6.png)
 
 The regression results for each subject is shown below. 
 
