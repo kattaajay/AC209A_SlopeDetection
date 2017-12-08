@@ -283,10 +283,6 @@ print('Total Number of Predictors is %d' %np.sum(dt_base.feature_importances_ > 
     Total Number of Predictors is 78
 
 
-
-
-
-
 ```python
 plt.plot(np.arange(len(y_test)), dt_base.predict(X_test), 's', alpha = 0.5, label = 'Prediction')
 plt.plot(np.arange(len(y_test)), y_test, 'r-', label = 'True')
@@ -330,8 +326,7 @@ score_dtcv_test = best_est_dt.score(X_test, y_test)
 print('Score on test set is %f' %score_dtcv_test)
 
 ind_order_dt_cv = np.argsort(best_est_dt.feature_importances_)[::-1]
-
-print(’Significant predictors are: \n’)
+print(‘Significant predictors are: \n’)
 
 for j in range(10):
     print(X_test.columns[ind_order_dt_cv[j]])
@@ -344,8 +339,6 @@ print('\nTotal Number of Predictors is %d' %np.sum(best_est_dt.feature_importanc
     Best parameter is 8.000000
     Score on train set is 0.985939
     Score on test set is 0.838272
-
-
 
     Significant predictors are: 
 
@@ -382,19 +375,9 @@ score_dt_cv_train = dt_cv.score(X_train, y_train)
 print('Score on train set for Decision Tree classifier is %f' %score_dt_cv_train)
 score_dt_cv_test = dt_cv.score(X_test, y_test)
 print('Score on test set for Decision Tree classifier is %f' %score_dt_cv_test)
-```
-
-
-    {'max_depth': 8} best score is 0.745710
-    Score on train set for Decision Tree classifier is 0.985939
-    Score on test set for Decision Tree classifier is 0.832099
-
-
-
-
-```python
 
 ind_order_dt_cv_normal = np.argsort(dt_cv.feature_importances_)[::-1]
+print(‘Significant predictors are: \n’)
 
 for j in range(10):
     print(X_test.columns[ind_order_dt_cv_normal[j]])
@@ -402,6 +385,12 @@ for j in range(10):
 print('\nTotal Number of Predictors is %d' %np.sum(dt_cv.feature_importances_> 0))
 ```
 
+
+    {'max_depth': 8} best score is 0.745710
+    Score on train set for Decision Tree classifier is 0.985939
+    Score on test set for Decision Tree classifier is 0.832099
+
+    Significant predictors are:
 
     angleX_L_42
     angleY_A_52mm
@@ -415,6 +404,9 @@ print('\nTotal Number of Predictors is %d' %np.sum(dt_cv.feature_importances_> 0
     accZRot_A_88
     
     Total Number of Predictors is 55
+
+
+
 
 
 ### 4) Decision Tree (PCA Components: 90% explained variance)
@@ -452,6 +444,9 @@ plt.ylabel('Principal Component 2')
 
 ```python
 
+### PCA Components that explain 90% of variance
+
+
 n = 200
 pca = PCA(n_components=n)
 pca.fit(X_train_std)
@@ -468,26 +463,22 @@ X_train_pca = pca.transform(X_train_std)
 X_test_pca = pca.transform(X_test_std)
 
 print("Number of PCA components: %d" %ncomp)
-```
 
-
-    Number of PCA components: 61
-
-
-
-
-```python
 dt_pca = tree.DecisionTreeClassifier(max_depth = 6)
 dt_pca.fit(X_train_pca, y_train)
 
 print('Score on train set for Decision Tree classifier(PCA) is %f' %dt_pca.score(X_train_pca, y_train))
 print('Score on test set for Decision Tree classifier(PCA) is %f' %dt_pca.score(X_test_pca, y_test))
-
 ```
 
 
+    Number of PCA components: 61
+
     Score on train set for Decision Tree classifier(PCA) is 0.921354
     Score on test set for Decision Tree classifier(PCA) is 0.782716
+
+
+
 
 
 ### 5) Random Forest (Leave One Subject Out CV)
@@ -504,19 +495,15 @@ for n in n_list:
 
 best_p, best_score, best_est_rf = custom_cv(est_list, X_train, y_train, n_list, subnum_train)
 
-```
-
-
-
-
-
-```python
 print('Best parameter is: %d' %best_p)
 
 print('Score on train set is %f' %best_est_rf.score(X_train, y_train))
 
 print('Score on test set is %f' %best_est_rf.score(X_test, y_test))
+
 ```
+
+
 
 
     Best parameter is: 32
@@ -562,14 +549,10 @@ plt.figure()
 plot_confusion_matrix(cnf_matrix, classes=class_names,
                       title='Confusion matrix: Best Model')
 
-plt.show()
+
 ```
 
 
-    Confusion matrix
-    [[181   2   0]
-     [ 11 119   3]
-     [  0  61 433]]
 
 
 
@@ -594,17 +577,13 @@ for td in tree_depths:
             est_list.append(adaboost)
 
 best_p, best_score, best_est_treeboost = custom_cv(est_list, X_train, y_train, paramlist, subnum_train)
-```
 
-
-
-
-```python
 print('Best parameter is', best_p)
 
 print('Score on train set is %f' %best_est_treeboost.score(X_train, y_train))
 print('Score on test set is %f' %best_est_treeboost.score(X_test, y_test))
 ```
+
 
 
     Best parameter is (4, 4, 0.1)
@@ -628,13 +607,6 @@ for c in cs:
 
 best_p, best_score, best_clf_cv = custom_cv(est_list, X_train, y_train, cs, subnum_train)
 
-
-```
-
-
-
-
-```python
 print('Best parameter is')
 print(best_p)
 score_clf_train = best_clf_cv.score(X_train, y_train)
@@ -642,21 +614,15 @@ print('Score on train set is %f' %score_clf_train)
 
 score_clf_test = best_clf_cv.score(X_test, y_test)
 print('Score on test set is %f' %score_clf_test)
-```
 
+print("number of predictors:", np.sum(best_clf_cv.coef_[0] != 0))
+
+```
 
     Best parameter is
     0.0001
     Score on train set is 0.999285
     Score on test set is 0.835802
-
-
-
-
-```python
-print("number of predictors:", np.sum(best_clf_cv.coef_[0] != 0))
-```
-
 
     number of predictors: 1928
 
@@ -684,13 +650,6 @@ for c in Cs:
     
 best_p, best_score, best_svc_cv = custom_cv(est_list, X_train_ld, y_train, paramlist, subnum_train)
 
-
-```
-
-
-
-
-```python
 print('Best parameter is')
 print(best_p)
 score_svc_train = best_svc_cv.score(X_train_ld, y_train)
@@ -698,6 +657,7 @@ print('Score on train set is %f' %score_svc_train)
 
 score_svc_test = best_svc_cv.score(X_test_ld, y_test)
 print('Score on test set is %f' %score_svc_test)
+
 ```
 
 
@@ -756,7 +716,7 @@ plt.title("GMM")
 
 
 
-### Random Forest
+### 10) Individually trained model: Random Forest
 
 
 
@@ -786,15 +746,11 @@ for i in range(len(X_train_list)):
     score_rf_cv_train_list[i] = rf_cv_ind.score(X_train_list[i], y_train_list[i])
     score_rf_cv_test_list[i] = rf_cv_ind.score(X_test_list[i], y_test_list[i])
 
-```
-
-
-
-```python
 print('Average score on train set is %.3f'  %np.average(score_rf_cv_train_list))
 print('Average score on test set is %.3f' %np.average(score_rf_cv_test_list))
 
 print("number of predictor:", X_train_list[0].shape[1])
+
 ```
 
 
@@ -814,24 +770,6 @@ print("--- %s seconds ---" % (time.time() - start_time))
 
 
     --- 0.11072587966918945 seconds ---
-
-
-
-
-```python
-plt.plot(np.arange(len(y_test)), gmm.predict(X_test_gmm), 's', alpha = 0.5, label = 'Prediction')
-plt.plot(np.arange(len(y_test)), y_test+1, 'r-', label = 'True')
-
-plt.legend()
-np.sum(gmm_prediction == y_test)/len(y_test+1)
-
-plt.xlabel("Test Data")
-plt.yticks( np.unique(y_test)+1, ('Downhill', 'Flat', 'Uphill') )
-
-plt.title("GMM")
-
-
-```
 
 
 
@@ -1415,7 +1353,7 @@ plt.show()
 ![png](Report-Model_files/Report-Model_91_0.png)
 
 
-
+## 3. Regression
 ### 1) Baseline Model: Linear Regression
 
 
