@@ -303,10 +303,6 @@ plt.title("Baseline Model")
 
 
 
-    <matplotlib.text.Text at 0x158b0b588>
-
-
-
 
 ![png](Report-Model_files/Report-Model_17_1.png)
 
@@ -346,12 +342,15 @@ print('Score on test set is %f' %score_dtcv_test)
 
 ind_order_dt_cv = np.argsort(best_est_dt.feature_importances_)[::-1]
 
+print(’Significant predictors are: \n’)
+
 for j in range(10):
     print(X_test.columns[ind_order_dt_cv[j]])
 
 print('\nTotal Number of Predictors is %d' %np.sum(best_est_dt.feature_importances_> 0))
 ```
 
+    Significant predictors are: 
 
     angleX_L_42
     angleY_A_52mm
