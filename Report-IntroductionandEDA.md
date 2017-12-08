@@ -11,10 +11,6 @@ nav_include: 2
 
 
 
-```python
-```
-
-
 
 ### Experiment Details:
 

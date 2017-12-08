@@ -11,9 +11,6 @@ nav_include: 4
 
 
 
-```python
-```
-
 ### Reading and Cleaning Data
 
 
