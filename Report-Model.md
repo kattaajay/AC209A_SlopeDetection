@@ -1326,6 +1326,10 @@ print('Score on train set is %.3f' %score_lasso_cv_train)
 
 score_lasso_cv_test = best_est_lasso.score(X_test_std, y_test_multi)
 print('Score on test set is %.3f' %score_lasso_cv_test)
+
+print("number of predictor:", np.sum(best_est_lasso.coef_ != 0))
+print("Classfication converted accuracy on Test set: %0.3f" %regression_to_classification(y_test_multi, best_est_lasso.predict(X_test_std))[1])
+
 ```
 
 
@@ -1333,15 +1337,6 @@ print('Score on test set is %.3f' %score_lasso_cv_test)
     CV score is 1.000
     Score on train set is 0.987
     Score on test set is 0.947
-
-
-
-
-```python
-print("number of predictor:", np.sum(best_est_lasso.coef_ != 0))
-print("Classfication converted accuracy on Test set: %0.3f" %regression_to_classification(y_test_multi, best_est_lasso.predict(X_test_std))[1])
-```
-
 
     number of predictor: 1799
     Classfication converted accuracy on Test set: 0.779
@@ -1382,6 +1377,10 @@ print('Score on train set is %.3f' %score_ridge_cv_train)
 
 score_ridge_cv_test = best_est_ridge.score(X_test_std, y_test_multi)
 print('Score on test set is %.3f' %score_ridge_cv_test)
+
+print("number of predictor:", np.sum(best_est_ridge.coef_ != 0))
+print("Classfication converted accuracy on Test set: %0.3f" %regression_to_classification(y_test_multi, best_est_ridge.predict(X_test_std))[1])
+
 ```
 
 
@@ -1389,15 +1388,6 @@ print('Score on test set is %.3f' %score_ridge_cv_test)
     CV score is 1.000
     Score on train set is 0.987
     Score on test set is 0.946
-
-
-
-
-```python
-print("number of predictor:", np.sum(best_est_ridge.coef_ != 0))
-print("Classfication converted accuracy on Test set: %0.3f" %regression_to_classification(y_test_multi, best_est_ridge.predict(X_test_std))[1])
-```
-
 
     number of predictor: 1928
     Classfication converted accuracy on Test set: 0.772
@@ -1442,25 +1432,13 @@ X_test_pca = pca.transform(X_test_std)
 linear_pca = LinearRegression()
 linear_pca.fit(X_train_pca, y_train_multi)
 
-```
-
-
-
-
-
-    LinearRegression(copy_X=True, fit_intercept=True, n_jobs=1, normalize=False)
-
-
-
-
-
-```python
 
 print('Score on train set is %.3f' %linear_pca.score(X_train_pca, y_train_multi))
-
 print('Score on test set is %.3f' %linear_pca.score(X_test_pca, y_test_multi))
-
 print("Classfication converted accuracy on Test set: %0.3f" %regression_to_classification(y_test_multi, linear_pca.predict(X_test_pca))[1])
+
+print("number of predictor:", ncomp)
+
 ```
 
 
@@ -1468,15 +1446,8 @@ print("Classfication converted accuracy on Test set: %0.3f" %regression_to_class
     Score on test set is 0.947
     Classfication converted accuracy on Test set: 0.754
 
-
-
-
-```python
-print("number of predictor:", ncomp)
-```
-
-
     number of predictor: 61
+
 
 
 
@@ -1528,21 +1499,6 @@ lambdas = [.001,.01, 0.1, 1, 10, 100, 1000]
 lasso_pca_poly_2 = LassoCV(cv=5, alphas=lambdas, fit_intercept=True, normalize=False)
 lasso_pca_poly_2.fit(X_train_pca_poly_2, y_train_multi)
 
-
-```
-
-
-
-    LassoCV(alphas=[0.001, 0.01, 0.1, 1, 10, 100, 1000], copy_X=True, cv=5,
-        eps=0.001, fit_intercept=True, max_iter=1000, n_alphas=100, n_jobs=1,
-        normalize=False, positive=False, precompute='auto', random_state=None,
-        selection='cyclic', tol=0.0001, verbose=False)
-
-
-
-
-
-```python
 print('Score on train set is %.3f'  %lasso_pca_poly_2.score(X_train_pca_poly_2, y_train_multi))
 print('Score on test set is %.3f' %lasso_pca_poly_2.score(X_test_pca_poly_2, y_test_multi))
 print("Classfication converted accuracy on Test set: %0.3f" %regression_to_classification(y_test_multi, lasso_pca_poly_2.predict(X_test_pca_poly_2))[1])
@@ -1570,13 +1526,9 @@ print("--- %s seconds ---" % (time.time() - start_time))
     --- 0.0005300045013427734 seconds ---
 
 
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/sklearn/utils/validation.py:395: DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample.
-      DeprecationWarning)
 
 
-## 3.1 Regression (Individual Model)
-
-## Linear Regression (PCA Components: 90% explained variance)
+### 6) Individually trained model: Linear Regression (PCA Components: 90% explained variance)
 
 
 
@@ -1599,12 +1551,6 @@ for i in range(len(X_train_list_m)):
     score_linear_pca_test_list[i]  = linear_pca_ind.score(X_test_list_m[i], y_test_multi_list_m[i])
 
 
-```
-
-
-
-
-```python
 print('Average score on train set is %.3f'  %np.average(score_linear_pca_train_list))
 print('Average score on test set is %.3f' %np.average(score_linear_pca_test_list))
 
