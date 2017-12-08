@@ -9,6 +9,17 @@ nav_include: 4
 *  
 {: toc}
 
+**Summary**
+- We built models to predict walking slope using Hip-Only exosuit data without foot IMU. The first part is classification into 3 classes (, 7, regression
+- Build various model to find the best models for each case
+- powerful, simple, fast to predict
+- Test classification accuracy and R squared
+- Leave one subject out CV
+- To compare 7 classification and regression: calculated r squared value for 7 classification, and converted classification accuracy for regression
+- For implementing in the real system as a control parameter, classification accuracy should be very high (over 95%): Individually trained model might show high prediction performance, so we build one individually trained model for each case.
+- Detailed explanation of important findings are in result section
+
+
 
 ## 0. Data Preparation
 ### 1) Reading and Cleaning Data
@@ -26,24 +37,10 @@ df["slope_class"][df['ref_slope'] > 0]= 1
 df = df.drop("ref_speed", axis=1)
 
 
-```
-
-
-
-```python
-
 subject_test = 6;
 
 df_train = df[df['subject_number'] != subject_test]
 df_test = df[df['subject_number'] ==subject_test]
-
-```
-
-
-
-
-
-```python
 
 
 X_train = df_train.iloc[:, :-2]
@@ -62,7 +59,6 @@ for i in range(df_train.shape[1]):
         break
         
 index_unused_features = i
-
 
 
 
