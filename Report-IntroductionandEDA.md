@@ -1,7 +1,7 @@
 ---
 title: plot roll angle
 notebook: Report-IntroductionandEDA.ipynb
-include_nav: 2
+nav_include: 2
 ---
 
 ## Contents

@@ -1,7 +1,7 @@
 ---
 title: lambdas = [3,7, 10, 20, 30 , 50, 80]
 notebook: Report-Model.ipynb
-include_nav: 4
+nav_include: 4
 ---
 
 ## Contents

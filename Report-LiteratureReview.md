@@ -1,7 +1,7 @@
 ---
 title: Literature Review and Related Work
 notebook: Report-LiteratureReview.ipynb
-include_nav: 3
+nav_include: 3
 ---
 
 ## Contents
