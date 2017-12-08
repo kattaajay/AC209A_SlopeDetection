@@ -183,7 +183,7 @@ plt.ylabel("Angle [deg]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_22_1.png)
 
 
-** Comments **
+**Comments**
 - Plotting the thigh extension angle during one gait cycle shows promising differences between the three classes. Around 40% gait cycle, X-axis angle seems separate downhill, flat, and uphill condition quite well.
 
 
@@ -207,7 +207,7 @@ plt.xlabel('Reference Speed [m/s]')
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_24_1.png)
 
 
-** Comments **
+**Comments**
 1. Plotting the Thigh angle at 40% gait cycle versus the reference speed shows each slope class is clustered at different regions
 2. Although having reference speed as a predictor will greatly help the classification performance, the reference speed cannot be used as overground walking contains time-varying speeds that cannot be estimated accurately
 
@@ -240,7 +240,7 @@ plt.ylabel("Angle [deg]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_26_1.png)
 
 
-** Comments**
+**Comments**
 1. When the thigh angle is centered around 0 degree, the main differences in the three classes can be shown at either near 0% or 100% gait cycle as well as around 40%
 2. The uphill signals seem most different than flat and downhill 
 
@@ -272,7 +272,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_28_1.png)
 
 
-** Comments **
+**Comments**
 1. Looking at the angular velocity of thigh extension, we see that the uphill features seem the most different from two other classes
 2. flat ground and downhill signals overlaps greatly, may be difficult to use this feature to classify
 
@@ -303,7 +303,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_30_1.png)
 
 
-** Comments **
+**Comments**
 1. Now that the angular velocity signal is centered around 0 deg/s, the variance and distribution of different classes do not seem so different
 2. Angular velocity may not be sensitive to different sensor placements (donning sensor descrepancies) 
 
@@ -337,7 +337,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_32_1.png)
 
 
-** Comments **
+**Comments**
 1. The gyro in the z direction caputres some interesting signals during a gait cycle
 2. Uphill data has more extreme values
 3. Flat ground and downhill data have the most differences at around 10% and 55% gait cycle
@@ -437,7 +437,7 @@ plt.ylabel("Angle [deg]")
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_39_1.png)
 
 
-** Comments **
+**Comments**
 1. The thigh extension (roll) angles do seem to vary according to the different slope classes
 2. The most noticeable difference seem to be near the peak, around 38% GC
 
@@ -459,7 +459,7 @@ plt.legend()
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_41_1.png)
 
 
-** Comments **
+**Comments**
 1. Plotting the sum of thigh angles at 38% percent GC, we see that there is a trend of roll angle distribution at the different reference slopes
 2. with higher thigh angle values at 38% GC, there is a higher probability of walking uphill
 
@@ -481,7 +481,7 @@ plt.title('Slope vs. Roll Angle Amplitude')
 ![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_43_1.png)
 
 
-** Comments **
+**Comments**
 1. Similarly, we can look at the distribution of thigh angle amplitude
 2. The distribution and mean of thigh angle amplitude changes at different reference slopes
 3. As the thigh roll angle increases, the most probable reference slope also increases
