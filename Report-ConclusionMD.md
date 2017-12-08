@@ -44,6 +44,7 @@ Comparing our baseline Tree model to our optimal random forest model, we see tha
 From the confusion matrix of our best random forest model, we see that downhill cases have the highest classification accuracy. Errors when predicting flat ground cases are more likely to be downhill than uphill, uphill cases can be wrongly predicted as either flat ground of downhill.
 
 **Fig 2. Confusion Matrix for Random Forest Model**
+
 ![Table1](/Images/con_cm1.png)
 
 #### Individually Trained Classification
