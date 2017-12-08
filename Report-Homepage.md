@@ -1,7 +1,7 @@
 ---
 title: At-a-glance:
 notebook: Report-Homepage.ipynb
-nav_include:1
+nav_include: 1
 ---
 
 ## Contents
