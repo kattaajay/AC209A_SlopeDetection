@@ -1,5 +1,5 @@
 ---
-title: lambdas = [3,7, 10, 20, 30 , 50, 80]
+title: Models
 notebook: Report-Model.ipynb
 nav_include: 4
 ---
