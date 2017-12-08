@@ -932,17 +932,6 @@ print('Total Number of Predictors is %d' %np.sum(dt_cv_m.feature_importances_ > 
     Total Number of Predictors is 199
 
 
-```python
-import time
-start_time = time.time()
-dt_cv_m.predict(X_test.iloc[0,:])
-print("--- %s seconds ---" % (time.time() - start_time))
-```
-
-
-    --- 0.002917051315307617 seconds ---
-
-
 
 ### 4) Decision Tree (PCA Components: 90% explained variance)
 
@@ -1157,17 +1146,6 @@ print("number of predictors: %d" %np.sum(best_est_log_m.coef_[0] >0))
 
 
 
-```python
-start_time = time.time()
-best_est_log_m.predict(X_test_std.iloc[0,:])
-print("--- %s seconds ---" % (time.time() - start_time))
-```
-
-
-    --- 0.0010502338409423828 seconds ---
-
-
-
 
 ### 8) Individually trained model: Random Forest
 
@@ -1344,15 +1322,6 @@ print("Classfication converted accuracy on Test set: %0.3f" %regression_to_class
 
 
 
-```python
-start_time = time.time()
-best_est_lasso.predict(X_test_std.iloc[0,:])
-print("--- %s seconds ---" % (time.time() - start_time))
-```
-
-
-    --- 0.0011017322540283203 seconds ---
-
 
 ### 3) Ridge (Leave One Subject Out CV)
 
@@ -1393,16 +1362,6 @@ print("Classfication converted accuracy on Test set: %0.3f" %regression_to_class
     Classfication converted accuracy on Test set: 0.772
 
 
-
-
-```python
-start_time = time.time()
-best_est_ridge.predict(X_test_std.iloc[0,:])
-print("--- %s seconds ---" % (time.time() - start_time))
-```
-
-
-    --- 0.0009348392486572266 seconds ---
 
 
 
@@ -1511,19 +1470,6 @@ print("number of predictor:", np.sum(lasso_pca_poly_2.coef_ != 0))
     Score on test set is 0.937
     Classfication converted accuracy on Test set: 0.743
     number of predictor: 1608
-
-
-
-
-```python
-start_time = time.time()
-
-linear_pca.predict(X_test_pca[0,:])
-print("--- %s seconds ---" % (time.time() - start_time))
-```
-
-
-    --- 0.0005300045013427734 seconds ---
 
 
 
