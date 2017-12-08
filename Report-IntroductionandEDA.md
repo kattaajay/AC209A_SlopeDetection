@@ -1,13 +1,18 @@
 ---
-title: Introduction and EDA
+title: plot roll angle
 notebook: Report-IntroductionandEDA.ipynb
-include_nav: 2
 ---
 
 ## Contents
 {:.no_toc}
 *  
 {: toc}
+
+
+
+```python
+```
+
 
 
 
@@ -261,7 +266,7 @@ plt.ylabel("Angle [deg]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_21_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_22_1.png)
 
 
 #### Comments:
@@ -288,7 +293,7 @@ plt.xlabel('Reference Speed [m/s]')
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_23_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_24_1.png)
 
 
 #### Comments:
@@ -326,7 +331,7 @@ plt.ylabel("Angle [deg]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_25_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_26_1.png)
 
 
 #### Comments:
@@ -363,7 +368,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_27_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_28_1.png)
 
 
 #### Comments:
@@ -400,7 +405,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_29_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_30_1.png)
 
 
 #### Comments:
@@ -437,7 +442,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_31_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_32_1.png)
 
 
 #### Comments:
@@ -553,7 +558,7 @@ plt.ylabel("Angle [deg]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_38_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_39_1.png)
 
 
 #### Comments:
@@ -580,7 +585,7 @@ plt.legend()
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_40_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_41_1.png)
 
 
 #### Comments:
@@ -606,7 +611,7 @@ plt.title('Slope vs. Roll Angle Amplitude')
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_42_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_43_1.png)
 
 
 #### Comments:

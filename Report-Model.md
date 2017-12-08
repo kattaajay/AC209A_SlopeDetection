@@ -1,13 +1,18 @@
 ---
-title: Models
+title: lambdas = [3,7, 10, 20, 30 , 50, 80]
 notebook: Report-Model.ipynb
-include_nav: 4
 ---
 
 ## Contents
 {:.no_toc}
 *  
 {: toc}
+
+
+
+```python
+```
+
 
 
 
@@ -460,6 +465,7 @@ def plot_confusion_matrix(cm, classes,
 ```
 
 
+## 1. Classification into 3 Classes (Uphill / Flat / Downhill)
 
 ### 1) Baseline Model: Decision Tree (Default: Unlimited Depth)
 
@@ -515,7 +521,7 @@ plt.title("Baseline Model")
 
 
 
-![png](Report-Model_files/Report-Model_16_1.png)
+![png](Report-Model_files/Report-Model_17_1.png)
 
 
 ### 2) Decision Tree (Leave One Subject Out CV)
@@ -660,7 +666,7 @@ plt.ylabel('Principal Component 2')
 
 
 
-![png](Report-Model_files/Report-Model_24_1.png)
+![png](Report-Model_files/Report-Model_25_1.png)
 
 
 
@@ -795,7 +801,7 @@ plt.title("Best Model: Random Forest")
 
 
 
-![png](Report-Model_files/Report-Model_30_1.png)
+![png](Report-Model_files/Report-Model_31_1.png)
 
 
 
@@ -821,7 +827,7 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_31_1.png)
+![png](Report-Model_files/Report-Model_32_1.png)
 
 
 ### 6) Adaboost (Leave One Subject Out CV)
@@ -1050,7 +1056,7 @@ plt.title("GMM")
 
 
 
-![png](Report-Model_files/Report-Model_44_2.png)
+![png](Report-Model_files/Report-Model_45_2.png)
 
 
 
@@ -1388,9 +1394,10 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_51_0.png)
+![png](Report-Model_files/Report-Model_52_0.png)
 
 
+## 2. Classification into 7 classes (-10, -5, 0, 5, 10, 15, 20)
 
 ### 1) Baseline Model: Decision Tree (Default: Unlimited Depth)
 
@@ -1461,7 +1468,7 @@ plt.title("Baseline Model")
 
 
 
-![png](Report-Model_files/Report-Model_57_1.png)
+![png](Report-Model_files/Report-Model_58_1.png)
 
 
 ### 2) Decision Tree (Leave One Subject Out CV)
@@ -1773,7 +1780,7 @@ plt.title("Best Model: Random Forest")
 
 
 
-![png](Report-Model_files/Report-Model_74_1.png)
+![png](Report-Model_files/Report-Model_75_1.png)
 
 
 
@@ -1803,7 +1810,7 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_75_1.png)
+![png](Report-Model_files/Report-Model_76_1.png)
 
 
 ### 6) Adaboost(Leave One Subject Out CV)
@@ -2271,7 +2278,7 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_90_0.png)
+![png](Report-Model_files/Report-Model_91_0.png)
 
 
 
@@ -2318,7 +2325,7 @@ plt.title("Baseline Model")
 
 
 
-![png](Report-Model_files/Report-Model_94_1.png)
+![png](Report-Model_files/Report-Model_95_1.png)
 
 
 ### 2) Lasso (Leave One Subject Out CV)
@@ -2546,7 +2553,7 @@ plt.title("Best Model: Linear Regression with PCA Components")
 
 
 
-![png](Report-Model_files/Report-Model_108_1.png)
+![png](Report-Model_files/Report-Model_109_1.png)
 
 
 ### 5) Lasso (2nd order predictors of PCA Components: 90% explained variance)
@@ -2620,6 +2627,7 @@ print("--- %s seconds ---" % (time.time() - start_time))
       DeprecationWarning)
 
 
+## 3.1 Regression (Individual Model)
 
 ## Linear Regression (PCA Components: 90% explained variance)
 
@@ -2689,5 +2697,5 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_117_0.png)
+![png](Report-Model_files/Report-Model_118_0.png)
 
