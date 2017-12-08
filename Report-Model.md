@@ -10,8 +10,8 @@ nav_include: 4
 {: toc}
 
 
-
-### Reading and Cleaning Data
+## 0. Data Preparation
+### 1) Reading and Cleaning Data
 
 
 
@@ -112,7 +112,7 @@ X_test_std = standardize(X_test, X_train_unstand)
 ```
 
 
-### Custom Functions
+### 2) Custom Functions
 
 
 
