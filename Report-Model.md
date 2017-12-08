@@ -1,73 +1,16 @@
 ---
-title: Models
+title: 3.1 Regression (Individual Model)
 notebook: Report-Model.ipynb
-nav_include: 4
 ---
 
 ## Contents
 {:.no_toc}
 *  
 {: toc}
-```python
-import numpy as np
-import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import r2_score
-import statsmodels.api as sm
-from statsmodels.api import OLS
-from sklearn import preprocessing
-from sklearn.preprocessing import scale
-from sklearn.decomposition import PCA
-import sklearn.metrics as metrics
-from sklearn.linear_model import Ridge
-from sklearn.linear_model import Lasso
-from sklearn.linear_model import RidgeCV
-from sklearn.linear_model import LassoCV
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.utils import resample
-from sklearn.linear_model import LogisticRegression
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from sklearn.model_selection import cross_val_score
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import Imputer
-from sklearn.metrics import mean_squared_error
-from datetime import datetime
-from sklearn.model_selection import cross_val_score
-from sklearn import tree
-from sklearn import ensemble
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn import svm
-import itertools;
-from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import KFold
-from itertools import product
-from collections import OrderedDict   
-from sklearn.tree import export_graphviz
-from IPython.display import Image
-from IPython.display import display
-from matplotlib import colors
-import seaborn as sns
-import time
 
-%matplotlib inline
 
-sns.set_context("poster")
 
-! pip install colour
-from colour import Color
-red = Color("blue")
-colors = list(red.range_to(Color("green"),7))
-```
+
 
 
     Requirement already satisfied: colour in /Users/personalmac/anaconda/lib/python3.6/site-packages
@@ -571,7 +514,7 @@ plt.title("Baseline Model")
 
 
 
-![png](Report-Model_files/Report-Model_15_1.png)
+![png](Report-Model_files/Report-Model_16_1.png)
 
 
 ### 2) Decision Tree (Leave One Subject Out CV)
@@ -716,7 +659,7 @@ plt.ylabel('Principal Component 2')
 
 
 
-![png](Report-Model_files/Report-Model_23_1.png)
+![png](Report-Model_files/Report-Model_24_1.png)
 
 
 
@@ -851,7 +794,7 @@ plt.title("Best Model: Random Forest")
 
 
 
-![png](Report-Model_files/Report-Model_29_1.png)
+![png](Report-Model_files/Report-Model_30_1.png)
 
 
 
@@ -877,7 +820,7 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_30_1.png)
+![png](Report-Model_files/Report-Model_31_1.png)
 
 
 ### 6) Adaboost (Leave One Subject Out CV)
@@ -1106,7 +1049,7 @@ plt.title("GMM")
 
 
 
-![png](Report-Model_files/Report-Model_43_2.png)
+![png](Report-Model_files/Report-Model_44_2.png)
 
 
 
@@ -1444,7 +1387,7 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_50_0.png)
+![png](Report-Model_files/Report-Model_51_0.png)
 
 
 
@@ -1517,7 +1460,7 @@ plt.title("Baseline Model")
 
 
 
-![png](Report-Model_files/Report-Model_56_1.png)
+![png](Report-Model_files/Report-Model_57_1.png)
 
 
 ### 2) Decision Tree (Leave One Subject Out CV)
@@ -1829,7 +1772,7 @@ plt.title("Best Model: Random Forest")
 
 
 
-![png](Report-Model_files/Report-Model_73_1.png)
+![png](Report-Model_files/Report-Model_74_1.png)
 
 
 
@@ -1859,7 +1802,7 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_74_1.png)
+![png](Report-Model_files/Report-Model_75_1.png)
 
 
 ### 6) Adaboost(Leave One Subject Out CV)
@@ -2327,7 +2270,7 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_89_0.png)
+![png](Report-Model_files/Report-Model_90_0.png)
 
 
 
@@ -2374,7 +2317,7 @@ plt.title("Baseline Model")
 
 
 
-![png](Report-Model_files/Report-Model_93_1.png)
+![png](Report-Model_files/Report-Model_94_1.png)
 
 
 ### 2) Lasso (Leave One Subject Out CV)
@@ -2602,7 +2545,7 @@ plt.title("Best Model: Linear Regression with PCA Components")
 
 
 
-![png](Report-Model_files/Report-Model_107_1.png)
+![png](Report-Model_files/Report-Model_108_1.png)
 
 
 ### 5) Lasso (2nd order predictors of PCA Components: 90% explained variance)
@@ -2745,5 +2688,5 @@ plt.show()
 
 
 
-![png](Report-Model_files/Report-Model_116_0.png)
+![png](Report-Model_files/Report-Model_117_0.png)
 

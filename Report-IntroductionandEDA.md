@@ -1,13 +1,17 @@
 ---
-title: Introduction and EDA
+title: compare roll angle amplitude
 notebook: Report-IntroductionandEDA.ipynb
-nav_include: 1
+nav_include: 2
 ---
 
 ## Contents
 {:.no_toc}
 *  
 {: toc}
+
+
+
+
 ```python
 import numpy as np
 import pandas as pd
@@ -75,8 +79,11 @@ The sloped walking protocol involved 6 subjects walking at 7 different condition
 
 !!!!!!!!!!!!!! EXPLAIN MORE IF TIME
 
+![Experiment set-up](/Images/experiment.png)
+Format: ![Alt Text](url)
+
 <img src="experiment.png"  style="width: 500px;">
-<center> Fig 1. Experiment set-up <center>
+<center> Fig 1.  <center>
 
 ### Description of Data:
 
@@ -257,7 +264,7 @@ plt.ylabel("Angle [deg]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_20_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_21_1.png)
 
 
 #### Comments:
@@ -284,7 +291,7 @@ plt.xlabel('Reference Speed [m/s]')
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_22_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_23_1.png)
 
 
 #### Comments:
@@ -322,7 +329,7 @@ plt.ylabel("Angle [deg]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_24_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_25_1.png)
 
 
 #### Comments:
@@ -359,7 +366,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_26_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_27_1.png)
 
 
 #### Comments:
@@ -396,7 +403,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_28_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_29_1.png)
 
 
 #### Comments:
@@ -433,7 +440,7 @@ plt.ylabel("Angular Velocity [deg/s]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_30_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_31_1.png)
 
 
 #### Comments:
@@ -549,7 +556,7 @@ plt.ylabel("Angle [deg]")
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_37_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_38_1.png)
 
 
 #### Comments:
@@ -576,7 +583,7 @@ plt.legend()
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_39_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_40_1.png)
 
 
 #### Comments:
@@ -602,7 +609,7 @@ plt.title('Slope vs. Roll Angle Amplitude')
 
 
 
-![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_41_1.png)
+![png](Report-IntroductionandEDA_files/Report-IntroductionandEDA_42_1.png)
 
 
 #### Comments:
