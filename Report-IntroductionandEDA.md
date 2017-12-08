@@ -1,5 +1,5 @@
 ---
-title: compare roll angle amplitude
+title: Introduction and EDA
 notebook: Report-IntroductionandEDA.ipynb
 nav_include: 1
 ---
