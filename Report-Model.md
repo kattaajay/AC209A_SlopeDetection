@@ -27,183 +27,9 @@ df["slope_class"][df['ref_slope'] < 0] = -1
 df["slope_class"][df['ref_slope'] == 0]= 0
 df["slope_class"][df['ref_slope'] > 0]= 1
 df = df.drop("ref_speed", axis=1)
-df.head()
 
 
 ```
-
-
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>subject_number</th>
-      <th>time_0</th>
-      <th>time_2</th>
-      <th>time_4</th>
-      <th>time_6</th>
-      <th>time_8</th>
-      <th>time_10</th>
-      <th>time_12</th>
-      <th>time_14</th>
-      <th>time_16</th>
-      <th>...</th>
-      <th>feature_L_H_90</th>
-      <th>feature_L_H_92</th>
-      <th>feature_L_H_94</th>
-      <th>feature_L_H_96</th>
-      <th>feature_L_H_98</th>
-      <th>feature_L_H_100</th>
-      <th>subHeight</th>
-      <th>subWeight</th>
-      <th>ref_slope</th>
-      <th>slope_class</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>70039.0</td>
-      <td>70070.0</td>
-      <td>70114.0</td>
-      <td>70153.0</td>
-      <td>70194.0</td>
-      <td>70214.0</td>
-      <td>70233.0</td>
-      <td>70258.0</td>
-      <td>70284.0</td>
-      <td>...</td>
-      <td>4.69</td>
-      <td>4.69</td>
-      <td>4.69</td>
-      <td>4.69</td>
-      <td>4.69</td>
-      <td>4.69</td>
-      <td>168</td>
-      <td>59</td>
-      <td>-10</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>71249.0</td>
-      <td>71273.0</td>
-      <td>71303.0</td>
-      <td>71333.0</td>
-      <td>71358.0</td>
-      <td>71393.0</td>
-      <td>71418.0</td>
-      <td>71442.0</td>
-      <td>71477.0</td>
-      <td>...</td>
-      <td>5.59</td>
-      <td>5.59</td>
-      <td>5.59</td>
-      <td>5.59</td>
-      <td>5.59</td>
-      <td>5.59</td>
-      <td>168</td>
-      <td>59</td>
-      <td>-10</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>72503.0</td>
-      <td>72527.0</td>
-      <td>72551.0</td>
-      <td>72576.0</td>
-      <td>72600.0</td>
-      <td>72624.0</td>
-      <td>72648.0</td>
-      <td>72672.0</td>
-      <td>72697.0</td>
-      <td>...</td>
-      <td>4.44</td>
-      <td>4.44</td>
-      <td>4.44</td>
-      <td>4.44</td>
-      <td>4.44</td>
-      <td>4.44</td>
-      <td>168</td>
-      <td>59</td>
-      <td>-10</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>73714.0</td>
-      <td>73738.0</td>
-      <td>73762.0</td>
-      <td>73786.0</td>
-      <td>73810.0</td>
-      <td>73834.0</td>
-      <td>73858.0</td>
-      <td>73882.0</td>
-      <td>73906.0</td>
-      <td>...</td>
-      <td>3.39</td>
-      <td>3.39</td>
-      <td>3.39</td>
-      <td>3.39</td>
-      <td>3.39</td>
-      <td>3.39</td>
-      <td>168</td>
-      <td>59</td>
-      <td>-10</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>74913.0</td>
-      <td>74938.0</td>
-      <td>74963.0</td>
-      <td>74988.0</td>
-      <td>75012.0</td>
-      <td>75037.0</td>
-      <td>75062.0</td>
-      <td>75087.0</td>
-      <td>75112.0</td>
-      <td>...</td>
-      <td>5.10</td>
-      <td>5.10</td>
-      <td>5.10</td>
-      <td>5.10</td>
-      <td>5.10</td>
-      <td>5.10</td>
-      <td>168</td>
-      <td>59</td>
-      <td>-10</td>
-      <td>-1</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 3251 columns</p>
-</div>
-
-
 
 
 
@@ -214,14 +40,7 @@ subject_test = 6;
 df_train = df[df['subject_number'] != subject_test]
 df_test = df[df['subject_number'] ==subject_test]
 
-df_train.shape, df_test.shape
 ```
-
-
-
-
-
-    ((4196, 3251), (810, 3251))
 
 
 
@@ -455,22 +274,15 @@ score_base_test  = dt_base.score(X_test, y_test)
 
 print('Score on train set is %f' %score_base_train)
 print('Score on test set is %f' %score_base_test)
+print('Total Number of Predictors is %d' %np.sum(dt_base.feature_importances_ > 0))
 ```
 
 
     Score on train set is 1.000000
     Score on test set is 0.817284
-
-
-
-
-```python
-
-print('Total Number of Predictors is %d' %np.sum(dt_base.feature_importances_ > 0))
-```
-
-
     Total Number of Predictors is 78
+
+
 
 
 
