@@ -57,12 +57,12 @@ colors = list(red.range_to(Color("green"),7))
     Requirement already satisfied: colour in /Users/personalmac/anaconda/lib/python3.6/site-packages
 
 
-### Reading and Cleaning Data
+#### Reading and Cleaning Data
 
 
 
 ```python
-### READING DATA
+#### READING DATA
 
 df = pd.read_csv('dataAll_csv8_withmm.csv')
 df["slope_class"] = 0
@@ -99,7 +99,7 @@ y_test = df_test.iloc[:, -1]
 y_test_multi = df_test.iloc[:, -2]
 
 
-### Remove unnecessary predictors (Time, Angle Z, Accerelation X and Y)
+#### Remove unnecessary predictors (Time, Angle Z, Accerelation X and Y)
 
 for i in range(df_train.shape[1]):
     if df_train.columns[i] == 'timeGaitExt_L_0':
@@ -156,7 +156,7 @@ X_test_std = standardize(X_test, X_train_unstand)
 ```
 
 
-### Custom Functions
+#### Custom Functions
 
 
 

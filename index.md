@@ -4,7 +4,10 @@ notebook: Report-Homepage.ipynb
 nav_include: 1
 ---
 
-## Overview
+## AC209A Data Science Final project
+Jinwon Chung and Kate Zhou
+Group #55
+
 {:.no_toc}
 *  
 {: toc}
