@@ -14,15 +14,6 @@ nav_include: 4
 ```python
 ```
 
-
-
-
-
-
-
-    Requirement already satisfied: colour in /Users/personalmac/anaconda/lib/python3.6/site-packages
-
-
 ### Reading and Cleaning Data
 
 
@@ -40,23 +31,6 @@ df.head()
 
 
 ```
-
-
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:5: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      """
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:6: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      
-    /Users/personalmac/anaconda/lib/python3.6/site-packages/ipykernel_launcher.py:7: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-      import sys
 
 
 
