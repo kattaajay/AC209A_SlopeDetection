@@ -1,5 +1,13 @@
+---
+title: Literature Review and Related Work
+notebook: Report-LiteratureReview.ipynb
+---
 
-# Literature Review and Related Work
+## Contents
+{:.no_toc}
+*  
+{: toc}
+
 
 Before exploring with different modeling methods on the sloped walking Hip-Only system data, we reviewed relevant literature in this field. In general, many different classification models have been succesfully adapted to this field, and below are a few highlights.
 
