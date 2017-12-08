@@ -1,4 +1,4 @@
-theme: jekyll-theme-midnight
+theme: jekyll-theme-minimal
 title: Exosuit Slope Detection
 description: Detecting walking and running slopes using IMUS
 baseurl:
