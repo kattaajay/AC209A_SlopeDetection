@@ -1,6 +1,7 @@
 ---
-title: 3.1 Regression (Individual Model)
+title: Model
 notebook: Report-Model.ipynb
+include_nav: 4
 ---
 
 ## Contents
