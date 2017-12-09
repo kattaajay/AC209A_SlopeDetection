@@ -33,7 +33,7 @@ Moreover, we implemented a Gaussian Mixture Model (GMM) as it has been successfu
 
 A summary of all models and findings are shown below.
 
-**Table 1. Summary of All Methods and Findings **
+**Table 1. Summary of All Methods and Findings**
 ![Table1](/Images/Summary_Table_1.png)
 
 Comparing our baseline Tree model to our optimal random forest model, we see that the performance has improved greatly. Graphically, we see that there are fewer misclassification in the random forest model.
