@@ -125,17 +125,24 @@ For other future directions, we recognize that our current models lack interpret
 
 
 
-$$A^{-1}=adj(A)/det(A)$$
 
-$$adj =\left( \begin{array}{ccc}
-45 & 12 &-120\\
--3 & 0  &  8\\
-6 & 0 & -12 \end{array} \right)$$.
 
-$$det(A)= 12$$
+The propotion of female CS concentrators have taken Data Science 1 is $p_1 = 37/76 = 0.376$
 
-$$ A^{-1}=\left( \begin{array}{ccc}
-15/4 & 1 & -10 \\
--1/4 & 0 & 2/3 \\
-1/2 & 0  & -1  \end{array} \right)$$.
+The propotion of male CS concentrators have taken Data Science 1 is $p_2 = 50/133 = 0.487$
+
+let the hypothesis be $$H_0:p_1=p_2$$
+$$H_a:p_1 \neq p_2$$
+$$\alpha=0.05 $$
+
+$$ z= (p_1-p_2)/\sqrt{p(1-p)(1/n_1+1/n_2}$$
+
+where $$p=(p_1n_1+p_2n_2)/(n_1+n_2)$$
+
+by inserting all values we get $z=1.566$
+
+We do not reject $H_0$ because $-1.960 < 1.566 < 1.960$. Therefore we do not have statistically significant evidence at $α=0.05$ to show that  the interest in Data Science (by taking DS1) is related to gender.
+
+
+
 
