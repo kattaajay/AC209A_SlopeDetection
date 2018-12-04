@@ -127,6 +127,11 @@ For other future directions, we recognize that our current models lack interpret
 
 
 
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
 \title{Introduction to \LaTeX{}}
 \author{Author's Name}
 
@@ -149,4 +154,6 @@ Write your subsection text here.
 
 \section{Conclusion}
 Write your conclusion here.
+
+\end{document}
 
