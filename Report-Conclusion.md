@@ -127,16 +127,19 @@ For other future directions, we recognize that our current models lack interpret
 
 
 
-# Introduction
+Introduction
+============
 
 Here is the text of your introduction.
 
-\[\label{simple} \alpha = \sqrt{ \beta }\]
+$$\label{simple} \alpha = \sqrt{ \beta }$$
 
-## Subsection Heading Here
+Subsection Heading Here
+-----------------------
 
 Write your subsection text here.
 
-# Conclusion
+Conclusion
+==========
 
 Write your conclusion here.
