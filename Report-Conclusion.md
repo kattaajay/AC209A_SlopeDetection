@@ -127,33 +127,16 @@ For other future directions, we recognize that our current models lack interpret
 
 
 
-\documentclass{article}
-\usepackage{graphicx}
+# Introduction
 
-\begin{document}
-
-\title{Introduction to \LaTeX{}}
-\author{Author's Name}
-
-\maketitle
-
-\begin{abstract}
-The abstract text goes here.
-\end{abstract}
-
-\section{Introduction}
 Here is the text of your introduction.
 
-\begin{equation}
-    \label{simple}
-    \alpha = \sqrt{ \beta }
-\end{equation}
+\[\label{simple} \alpha = \sqrt{ \beta }\]
 
-\subsection{Subsection Heading Here}
+## Subsection Heading Here
+
 Write your subsection text here.
 
-\section{Conclusion}
+# Conclusion
+
 Write your conclusion here.
-
-\end{document}
-
