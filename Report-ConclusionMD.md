@@ -122,3 +122,20 @@ In this work, we showed the possibility of estimating walking slope using only t
 There are several challenges related to translating these models to actual exosuits that we can consider as next steps. In order to use the current models on an actual exosuit, we need to account for calculation time on embedded systems. We need to greatly simplify the prediction algorithm complexity in order for the embedded system implementation to not interfere with other time-dependent algorithms. In addition, we need to investigate whether using individually trained prediction models is feasible for exosuit research and translation. 
 
 For other future directions, we recognize that our current models lack interpretability, which can poentially be resolved by engineering new features based on biomechanics knowledge. The current appoach is purely data driven, thus including any biomechanics insight could greatly improve interpretability as well as reduce algorithm complexity.
+
+
+
+$$A^{-1}=adj(A)/det(A)$$
+
+$$adj =\left( \begin{array}{ccc}
+45 & 12 &-120\\
+-3 & 0  &  8\\
+6 & 0 & -12 \end{array} \right)$$.
+
+$$det(A)= 12$$
+
+$$ A^{-1}=\left( \begin{array}{ccc}
+15/4 & 1 & -10 \\
+-1/4 & 0 & 2/3 \\
+1/2 & 0  & -1  \end{array} \right)$$.
+
