@@ -127,22 +127,26 @@ For other future directions, we recognize that our current models lack interpret
 
 
 
-The propotion of female CS concentrators have taken Data Science 1 is $p_1 = 37/76 = 0.376$
+\title{Introduction to \LaTeX{}}
+\author{Author's Name}
 
-The propotion of male CS concentrators have taken Data Science 1 is $p_2 = 50/133 = 0.487$
+\maketitle
 
-let the hypothesis be $$H_0:p_1=p_2$$
-$$H_a:p_1 \neq p_2$$
-$$\alpha=0.05 $$
+\begin{abstract}
+The abstract text goes here.
+\end{abstract}
 
-$$ z= (p_1-p_2)/\sqrt{p(1-p)(1/n_1+1/n_2}$$
+\section{Introduction}
+Here is the text of your introduction.
 
-where $$p=(p_1n_1+p_2n_2)/(n_1+n_2)$$
+\begin{equation}
+    \label{simple}
+    \alpha = \sqrt{ \beta }
+\end{equation}
 
-by inserting all values we get $z=1.566$
+\subsection{Subsection Heading Here}
+Write your subsection text here.
 
-We do not reject $H_0$ because $-1.960 < 1.566 < 1.960$. Therefore we do not have statistically significant evidence at $α=0.05$ to show that  the interest in Data Science (by taking DS1) is related to gender.
-
-
-
+\section{Conclusion}
+Write your conclusion here.
 
